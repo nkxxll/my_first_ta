@@ -1,5 +1,10 @@
 # Some notes for the TA
 
+**Index:**
+
+1. [general_notes](notes/general_notes.md) 
+1. [secure_storage](notes/secure_storage.md) 
+
 ## TODOs
 
 - [ ] read secure storage
