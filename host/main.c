@@ -89,6 +89,18 @@ int main(void) {
          err_origin);
   printf("TA incremented value to %d\n", op.params[0].value.a);
 
+  // reset op for this call
+  memset(&op, 0, sizeof(op));
+  // set the params to 4 times none
+  op.paramTypes = TEEC_PARAM_TYPES(TEEC_NONE, TEEC_NONE, TEEC_NONE, TEEC_NONE);
+  printf("Invoking TA to print love!\n");
+
+  //
+  res = TEEC_InvokeCommand(&sess, TA_MY_FIRST_TA_PRINT_LOVE, &op, &err_origin);
+  if (res != TEEC_SUCCESS)
+    errx(1, "TEEC_InvokeCommand failed with code 0x%x origin 0x%x", res,
+         err_origin);
+
   /*
    * We're done with the TA, close the session and
    * destroy the context.

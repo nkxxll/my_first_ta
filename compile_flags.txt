@@ -1,3 +1,5 @@
 -Wall
 -sdt=c17
 -I../../optee_os/lib/libutee/include
+-I../../linux/include
+-I../../linux/include/linux

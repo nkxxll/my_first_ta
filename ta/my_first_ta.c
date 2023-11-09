@@ -104,6 +104,23 @@ static TEE_Result inc_value(uint32_t param_types, TEE_Param params[4]) {
   return TEE_SUCCESS;
 }
 
+static TEE_Result print_love(uint32_t param_types, TEE_Param params[4]) {
+  // does this work this does actually nothing
+  uint32_t exp_param_types =
+      TEE_PARAM_TYPES(TEE_PARAM_TYPE_NONE, TEE_PARAM_TYPE_NONE,
+                      TEE_PARAM_TYPE_NONE, TEE_PARAM_TYPE_NONE);
+
+  DMSG("has been called");
+
+  if (param_types != exp_param_types)
+    return TEE_ERROR_BAD_PARAMETERS;
+
+  IMSG("Love is in the air!");
+  // here we should print the key
+
+  return TEE_SUCCESS;
+}
+
 static TEE_Result dec_value(uint32_t param_types, TEE_Param params[4]) {
   uint32_t exp_param_types =
       TEE_PARAM_TYPES(TEE_PARAM_TYPE_VALUE_INOUT, TEE_PARAM_TYPE_NONE,
@@ -135,6 +152,8 @@ TEE_Result TA_InvokeCommandEntryPoint(void __maybe_unused *sess_ctx,
     return inc_value(param_types, params);
   case TA_MY_FIRST_TA_CMD_DEC_VALUE:
     return dec_value(param_types, params);
+  case TA_MY_FIRST_TA_PRINT_LOVE:
+    return print_love(param_types, params);
   default:
     return TEE_ERROR_BAD_PARAMETERS;
   }

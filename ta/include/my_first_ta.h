@@ -41,5 +41,6 @@
 /* The function IDs implemented in this TA */
 #define TA_MY_FIRST_TA_CMD_INC_VALUE 0
 #define TA_MY_FIRST_TA_CMD_DEC_VALUE 1
+#define TA_MY_FIRST_TA_PRINT_LOVE 2
 
 #endif /*TA_MY_FIRST_TA_H*/
