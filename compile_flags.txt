@@ -1,0 +1,3 @@
+-Wall
+-sdt=c17
+-I../../optee_os/lib/libutee/include
