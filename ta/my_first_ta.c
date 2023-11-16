@@ -25,7 +25,6 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <tee_fs_key_manager.h>
 #include <tee_internal_api_extensions.h>
 #include <tee_internal_api.h>
 
